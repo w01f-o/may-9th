@@ -3,7 +3,11 @@
 @import './base/reset';
 @import './base/variables';
 @import './base/bootstrap-grid';
+@import './base/toastify';
 @import './base/global';
+@import './base/shared';
 @import './blocks/header';
 @import './blocks/burger';
+@import './blocks/auth';
+@import './blocks/profile';
 @import './blocks/footer';

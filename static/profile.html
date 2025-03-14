@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/styles.css" />
-    <title>Вход</title>
+    <title>Профиль</title>
   </head>
   <body class="body">
     <header class="header">
@@ -55,34 +55,9 @@
       </div>
     </header>
     <main class="main">
-      <section class="auth">
-        <div class="container auth__container">
-          <div class="row auth__row">
-            <div class="col-12">
-              <div class="auth__title">Вход</div>
-            </div>
-            <div class="col-6">
-              <form class="auth__form">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  class="input_primary"
-                  name="email"
-                />
-                <input
-                  type="password"
-                  placeholder="Пароль"
-                  class="input_primary"
-                  name="password"
-                />
-                <label
-                  >Ещё нет аккаунта?
-                  <a href="/register">Зарегистрироваться</a></label
-                >
-                <button class="button_primary">Войти</button>
-              </form>
-            </div>
-          </div>
+      <section class="profile">
+        <div class="container">
+          <div class="row profile__row"></div>
         </div>
       </section>
     </main>
@@ -124,9 +99,8 @@
         </div>
       </div>
     </footer>
-    <script src="/scripts/libs/toastify.js"></script>
     <script src="/scripts/libs/axios.min.js"></script>
     <script src="/scripts/index.js" type="module"></script>
-    <script src="/scripts/pages/auth.page.js" type="module"></script>
+    <script src="/scripts/pages/profile.page.js" type="module"></script>
   </body>
 </html>

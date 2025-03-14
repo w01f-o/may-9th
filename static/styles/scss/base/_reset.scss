@@ -12,7 +12,17 @@ button {
   cursor: pointer;
   background: none;
   border: none;
-  font-size: inherit;
+  font: {
+    size: inherit;
+    family: inherit;
+  }
+}
+
+input {
+  font: {
+    size: inherit;
+    family: inherit;
+  }
 }
 
 a {

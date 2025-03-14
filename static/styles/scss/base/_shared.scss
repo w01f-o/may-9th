@@ -1,0 +1,73 @@
+.input {
+  &_primary {
+    appearance: none;
+    border: 2px solid var(--color-foreground);
+    border-radius: 16px;
+    padding: 12px 18px;
+    background: var(--color-background);
+
+    transition: 0.2s;
+    outline: none;
+
+    &:focus-visible {
+      border-color: var(--color-red);
+    }
+  }
+}
+
+.button {
+  &_primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    appearance: none;
+
+    height: 50px;
+    min-width: 180px;
+    padding-inline: 28px;
+    border-radius: 12px;
+
+    background: var(--color-red);
+    color: var(--color-background);
+    font: {
+      size: 18px;
+    }
+
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      scale: 0.95;
+    }
+
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+
+    transition: 0.2s;
+
+    &:focus-visible {
+      outline-color: var(--color-gold);
+    }
+
+    &[disabled] {
+      animation: fade-in 2.5s infinite;
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.65;
+  }
+}

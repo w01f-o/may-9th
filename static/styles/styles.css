@@ -14,6 +14,12 @@ button {
   background: none;
   border: none;
   font-size: inherit;
+  font-family: inherit;
+}
+
+input {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 a {
@@ -36,6 +42,7 @@ img {
   --color-foreground: #3e2723;
   --color-red: #e30613;
   --color-gold: #ffd700;
+  --color-green: #5ddb5d;
 }
 
 /*!
@@ -4138,6 +4145,98 @@ img {
   }
 }
 
+/**
+ * Minified by jsDelivr using clean-css v5.3.3.
+ * Original file: /npm/toastify-js@1.12.0/src/toastify.css
+ *
+ * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
+ */
+/*!
+ * Toastify js 1.12.0
+ * https://github.com/apvarun/toastify-js
+ * @license MIT licensed
+ *
+ * Copyright (C) 2018 Varun A P
+ */
+.toastify {
+  padding: 12px 20px;
+  color: #fff;
+  display: inline-block;
+  box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+  background: linear-gradient(135deg, #73a5ff, #5477f5);
+  position: fixed;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  border-radius: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  max-width: calc(50% - 20px);
+  z-index: 2147483647;
+}
+
+.toastify.on {
+  opacity: 1;
+}
+
+.toast-close {
+  background: 0 0;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  opacity: 0.4;
+  padding: 0 5px;
+}
+
+.toastify-right {
+  right: 15px;
+}
+
+.toastify-left {
+  left: 15px;
+}
+
+.toastify-top {
+  top: -150px;
+}
+
+.toastify-bottom {
+  bottom: -150px;
+}
+
+.toastify-rounded {
+  border-radius: 25px;
+}
+
+.toastify-avatar {
+  width: 1.5em;
+  height: 1.5em;
+  margin: -7px 5px;
+  border-radius: 2px;
+}
+
+.toastify-center {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  max-width: fit-content;
+  max-width: -moz-fit-content;
+}
+
+@media only screen and (max-width: 360px) {
+  .toastify-left,
+  .toastify-right {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+}
+
 .body {
   display: flex;
   flex-direction: column;
@@ -4162,15 +4261,77 @@ img {
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
 }
 
+.input_primary {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 2px solid var(--color-foreground);
+  border-radius: 16px;
+  padding: 12px 18px;
+  background: var(--color-background);
+  transition: 0.2s;
+  outline: none;
+}
+.input_primary:focus-visible {
+  border-color: var(--color-red);
+}
+
+.button_primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 50px;
+  min-width: 180px;
+  padding-inline: 28px;
+  border-radius: 12px;
+  background: var(--color-red);
+  color: var(--color-background);
+  font-size: 18px;
+  transition: 0.2s;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: 0.2s;
+}
+.button_primary:hover {
+  opacity: 0.8;
+}
+.button_primary:active {
+  scale: 0.95;
+}
+.button_primary:focus-visible {
+  outline-color: var(--color-gold);
+}
+.button_primary[disabled] {
+  animation: fade-in 2.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.65;
+  }
+}
 :root {
   --font-family: "Comfortaa", sans-serif;
   --color-background: #fdf5e6;
   --color-foreground: #3e2723;
   --color-red: #e30613;
   --color-gold: #ffd700;
+  --color-green: #5ddb5d;
 }
 
 .header__logo {
@@ -4204,6 +4365,7 @@ img {
   --color-foreground: #3e2723;
   --color-red: #e30613;
   --color-gold: #ffd700;
+  --color-green: #5ddb5d;
 }
 
 .burger {
@@ -4272,6 +4434,70 @@ img {
 }
 .burger_open .nav__link {
   font-size: 24px;
+}
+
+.auth {
+  display: flex;
+  flex-grow: 1;
+}
+.auth__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.auth__row {
+  width: 100%;
+  justify-content: center;
+}
+.auth__title {
+  margin-block-end: 18px;
+  font-size: 48px;
+  text-align: center;
+}
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.auth__form-row {
+  display: flex;
+  gap: 16px;
+}
+.auth__form label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.auth__form button {
+  align-self: center;
+}
+.auth__form a {
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.profile__row {
+  padding-block: 40px;
+}
+.profile__card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile__card-name {
+  margin-block-end: 8px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+.profile__card-email {
+  text-align: center;
+  font-size: 18px;
+}
+.profile__card-avatar {
+  max-width: 400px;
 }
 
 .footer__row {

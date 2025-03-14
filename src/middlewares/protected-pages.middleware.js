@@ -1,11 +1,17 @@
-// import { ApiError } from '../exceptions/api.error.js';
-
-const protectedPages = ['/profile', '/quiz'];
-
 const protectedPagesMiddleware = (req, res, next) => {
-	if (protectedPages.includes(req.path)) {
-		return res.redirect('/login');
-	}
+	const { path, session } = req;
+
+	const protectedPages = ['/profile', '/quiz'];
+	const authPages = ['/login', '/register'];
+
+
+	// if (!session.user && protectedPages.includes(path)) {
+	// 	return res.redirect('/login');
+	// }
+
+	// if (req.session.user && authPages.includes(path)) {
+	// 	return res.redirect('/profile');
+	// }
 
 	next();
 };

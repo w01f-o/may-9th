@@ -7,11 +7,11 @@ class AuthService {
 		const user = await database.user.findUnique({ where: { email: dto.email } });
 
 		if (!user) {
-			throw ApiError.BadRequest('User not found');
+			throw ApiError.BadRequest('Неверный логин или пароль');
 		}
 
 		if (!await verify(user.password, dto.password)) {
-			throw ApiError.BadRequest('User not found');
+			throw ApiError.BadRequest('Неверный логин или пароль');
 		}
 
 		req.session.user = user;
@@ -28,7 +28,7 @@ class AuthService {
 		const candidate = await database.user.findUnique({ where: { email: dto.email } });
 
 		if (candidate) {
-			throw ApiError.BadRequest('User already exists');
+			throw ApiError.BadRequest('Пользователь с таким email уже зарегистрирован');
 		}
 
 		dto.password = await hash(dto.password);

@@ -54,7 +54,67 @@
         </div>
       </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <section class="auth">
+        <div class="container auth__container">
+          <div class="row auth__row">
+            <div class="col-12">
+              <div class="auth__title">Регистрация</div>
+            </div>
+            <div class="col-6">
+              <form class="auth__form">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="input_primary"
+                  name="email"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Имя"
+                  class="input_primary"
+                  name="name"
+                  required
+                />
+                <input
+                  type="password"
+                  placeholder="Пароль"
+                  class="input_primary"
+                  name="password"
+                  required
+                />
+                <div class="auth__form-row">
+                  <label>Пол:</label>
+                  <label for="male">
+                    Мужской
+                    <input
+                      type="radio"
+                      id="male"
+                      name="gender"
+                      value="MALE"
+                      required
+                    />
+                  </label>
+                  <label for="female">
+                    Женский
+                    <input
+                      type="radio"
+                      id="female"
+                      name="gender"
+                      value="FEMALE"
+                      required
+                    />
+                  </label>
+                </div>
+                <label>Уже есть аккаунт? <a href="/login">Войти</a></label>
+                <button class="button_primary">Зарегистрироваться</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <div class="container">
         <div class="row footer__row">
@@ -93,7 +153,9 @@
         </div>
       </div>
     </footer>
+    <script src="/scripts/libs/toastify.js"></script>
     <script src="/scripts/libs/axios.min.js"></script>
     <script src="/scripts/index.js" type="module"></script>
+    <script src="/scripts/pages/auth.page.js" type="module"></script>
   </body>
 </html>

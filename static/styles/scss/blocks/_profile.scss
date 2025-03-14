@@ -1,0 +1,32 @@
+.profile {
+  &__row {
+    padding-block: 40px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    &-name {
+      margin-block-end: 8px;
+      text-align: center;
+      font: {
+        size: 32px;
+        weight: 600;
+      }
+    }
+
+    &-email {
+      text-align: center;
+      font: {
+        size: 18px;
+      }
+    }
+
+    &-avatar {
+      max-width: 400px;
+    }
+  }
+}

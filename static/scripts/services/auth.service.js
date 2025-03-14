@@ -10,9 +10,11 @@ const authorize = async (type, credentials) => {
 
 		localStorage.setItem('user', JSON.stringify(user));
 	} catch (e) {
-		console.log(e);
+		throw e;
 	}
 };
 
-export { authorize };
+const logout = async () => { };
+
+export { authorize, logout };
 
