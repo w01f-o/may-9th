@@ -1,0 +1,33 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  font: {
+    family: var(--font-family);
+  }
+  background: var(--color-background);
+  color: var(--color-foreground);
+
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: var(--color-foreground);
+    z-index: 5;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    opacity: 0;
+  }
+
+  &_backdrop {
+    &::after {
+      opacity: 0.4;
+      pointer-events: unset;
+    }
+  }
+}
+
+.main {
+  flex-grow: 1;
+}

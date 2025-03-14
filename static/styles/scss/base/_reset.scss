@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  height: 100%;
+  max-width: 100%;
+}

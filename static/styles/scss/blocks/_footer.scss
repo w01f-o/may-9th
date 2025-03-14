@@ -1,0 +1,36 @@
+.footer {
+  &__row {
+    padding-block: 60px;
+  }
+
+  &__logo {
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &-item {
+      &:first-child {
+        font: {
+          weight: 600;
+        }
+        margin-block-end: 6px;
+      }
+    }
+
+    &-link {
+      transition: opacity 0.15s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

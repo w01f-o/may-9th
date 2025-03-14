@@ -1,0 +1,92 @@
+@use '../base/utils' as *;
+
+.burger {
+  display: none;
+
+  @include max-md-screen {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    position: relative;
+    width: 33px;
+    height: 25px;
+
+    span {
+      display: block;
+      width: inherit;
+      height: 3px;
+      position: absolute;
+      pointer-events: none;
+      background: var(--color-foreground);
+      transition: 0.2s;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__menu {
+    $width: 70vw;
+
+    position: fixed;
+
+    height: 100dvh;
+    width: $width;
+
+    top: 0;
+    z-index: 20;
+    left: calc($width * -1);
+    transition: left 0.3s;
+    padding: 80px 40px;
+
+    background: var(--color-background);
+  }
+
+  &_open {
+    .burger {
+      &__menu {
+        left: 0;
+      }
+
+      &__button {
+        span {
+          &:nth-child(1) {
+            transform: translateY(10px) rotate(-45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: translateY(-12px) rotate(45deg);
+          }
+        }
+      }
+    }
+
+    .nav {
+      display: block;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      &__link {
+        font: {
+          size: 24px;
+        }
+      }
+    }
+  }
+}
