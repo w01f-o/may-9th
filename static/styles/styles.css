@@ -5142,7 +5142,12 @@ button.swiper-pagination-bullet {
 .header .nav__list {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 16px;
+}
+.header .nav .button_primary {
+  min-width: auto;
+  font-size: 16px;
 }
 .header .nav__link {
   font-weight: 500;
@@ -5224,6 +5229,7 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 .burger_open .nav__link {
   font-size: 24px;
@@ -5603,6 +5609,15 @@ button.swiper-pagination-bullet {
   align-items: center;
 }
 
+:root {
+  --font-family: "Comfortaa", sans-serif;
+  --color-background: #fdf5e6;
+  --color-foreground: #3e2723;
+  --color-red: #e30613;
+  --color-gold: #ffd700;
+  --color-green: #5ddb5d;
+}
+
 .quiz__answer {
   width: 100%;
   height: 100%;
@@ -5611,6 +5626,11 @@ button.swiper-pagination-bullet {
   font-size: 18px;
   font-weight: 600;
   transition: 0.3s;
+}
+@media (max-width: 576px) {
+  .quiz__answer-col {
+    margin-block-end: 12px;
+  }
 }
 .quiz__answer_selected {
   background: var(--color-foreground);

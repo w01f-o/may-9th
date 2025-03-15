@@ -16,7 +16,7 @@ const renderQuizPage = (question) => {
 		<div class="quiz__question">${question.text}</div>
 		${question.answers
 			.map((answer) => `
-				<div class="col-4">
+				<div class="col-md-4 col-12 quiz__answer-col">
 					<button class="quiz__answer" data-id="${answer.id}">${answer.text}</div>
 				</div>
 			`)
