@@ -1,3 +1,5 @@
+@use '../base/utils' as *;
+
 .profile {
   &__row {
     padding-block: 40px;
@@ -28,6 +30,12 @@
 
     &-avatar {
       max-width: 400px;
+      max-height: 400px;
+      aspect-ratio: 1 / 1;
+
+      @include max-sm-screen {
+        width: 100%;
+      }
     }
   }
 

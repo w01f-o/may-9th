@@ -49,6 +49,7 @@
     }
 
     &-tape {
+      display: flex;
       position: absolute;
       left: -10%;
       top: 0;
@@ -67,7 +68,7 @@
       }
 
       @include max-sm-screen {
-        width: 70%;
+        width: 60%;
         right: 5%;
         top: 75%;
       }

@@ -5281,6 +5281,13 @@ button.swiper-pagination-bullet {
 }
 .profile__card-avatar {
   max-width: 400px;
+  max-height: 400px;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 576px) {
+  .profile__card-avatar {
+    width: 100%;
+  }
 }
 .profile__quiz {
   display: flex;
@@ -5489,6 +5496,7 @@ button.swiper-pagination-bullet {
   font-size: 24px;
 }
 .promo__card-tape {
+  display: flex;
   position: absolute;
   left: -10%;
   top: 0;
@@ -5510,7 +5518,7 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 576px) {
   .promo__card-tape {
-    width: 70%;
+    width: 60%;
     right: 5%;
     top: 75%;
   }
