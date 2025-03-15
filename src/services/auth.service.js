@@ -33,8 +33,8 @@ class AuthService {
 
 		dto.password = await hash(dto.password);
 		dto.avatar = {
-			'MALE': 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
-			'FEMALE': 'https://cdn-icons-png.flaticon.com/512/149/149072.png'
+			'MALE': '/assets/images/man-avatar.png',
+			'FEMALE': '/assets/images/woman-avatar.png'
 		}[dto.gender];
 
 		const user = await database.user.create({ data: dto });

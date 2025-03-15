@@ -32,6 +32,8 @@
       max-width: 400px;
       max-height: 400px;
       aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      overflow: hidden;
 
       @include max-sm-screen {
         width: 100%;
