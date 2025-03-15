@@ -1,0 +1,32 @@
+.not-found {
+  display: flex;
+  flex-grow: 1;
+
+  &__row {
+    height: 100%;
+    align-items: center;
+  }
+
+  &__container {
+    flex-grow: 1;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  &__title {
+    font: {
+      size: 64px;
+    }
+  }
+
+  &__text {
+    font: {
+      size: 24px;
+    }
+  }
+}

@@ -7,7 +7,7 @@ const renderPromotionsOnIndexPage = (promotions) => {
 	promotionsContainerEl.innerHTML = promotions
 		.slice(0, 3)
 		.map((promotion) => `
-			<div class="col-lg-3 col-md-6 col-12">
+			<div class="col-lg-3 col-12">
 				<a class="promotions__item" href="/promotions/${promotion.id}">
 					<div class="promotions__item-img promotions__item-img_simplify">
 						<img src="${promotion.thumbnail}" alt="${promotion.title}" />
@@ -22,7 +22,7 @@ const renderPromotionsOnIndexPage = (promotions) => {
 		`).join('');
 
 	promotionsContainerEl.insertAdjacentHTML('beforeend', `
-		<div class="col-lg-3 col-md-6 col-12">
+		<div class="col-lg-3 col-12">
 			<a class="button_primary" href="/promotions">Открыть все</a>
 		</div>
 	`);

@@ -14,7 +14,7 @@ class AuthApi {
 	}
 
 	static async logout() {
-		await baseAxios.post('/auth/logout');
+		await baseAxios.get('/auth/logout');
 	}
 }
 

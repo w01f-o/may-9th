@@ -35,6 +35,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-block-end: 24px;
 
     &-item {
       display: flex;
@@ -61,11 +62,19 @@
       border-radius: 5px;
 
       background: var(--color-background);
+      border: 1px solid var(--color-foreground);
 
       &-bar {
         height: 100%;
         background: var(--color-red);
       }
+    }
+  }
+
+  &__logout {
+    &-col {
+      display: flex;
+      justify-content: center;
     }
   }
 }

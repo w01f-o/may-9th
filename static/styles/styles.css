@@ -5286,6 +5286,7 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-block-end: 24px;
 }
 .profile__quiz-item {
   display: flex;
@@ -5306,10 +5307,15 @@ button.swiper-pagination-bullet {
   margin-block-start: 5px;
   border-radius: 5px;
   background: var(--color-background);
+  border: 1px solid var(--color-foreground);
 }
 .profile__quiz-progress-bar {
   height: 100%;
   background: var(--color-red);
+}
+.profile__logout-col {
+  display: flex;
+  justify-content: center;
 }
 
 .promotions__item {
@@ -5681,4 +5687,28 @@ button.swiper-pagination-bullet {
   padding-block-start: 10%;
   font-size: 32px;
   font-weight: 600;
+}
+
+.not-found {
+  display: flex;
+  flex-grow: 1;
+}
+.not-found__row {
+  height: 100%;
+  align-items: center;
+}
+.not-found__container {
+  flex-grow: 1;
+}
+.not-found__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.not-found__title {
+  font-size: 64px;
+}
+.not-found__text {
+  font-size: 24px;
 }/*# sourceMappingURL=styles.css.map */
