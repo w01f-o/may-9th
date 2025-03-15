@@ -1,0 +1,51 @@
+.promo {
+  height: calc(100svh - var(--header-height));
+
+  &__container,
+  &__row {
+    height: 100%;
+    padding-block-end: 80px;
+  }
+
+  &__row {
+    align-items: flex-end;
+  }
+
+  &__col {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__video {
+    position: absolute;
+    height: 100svh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__card {
+    display: inline-flex;
+    position: relative;
+    border-radius: 16px;
+    padding: 42px;
+    background: var(--color-background);
+
+    font: {
+      size: 24px;
+    }
+
+    &-tape {
+      position: absolute;
+      left: -10%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+}

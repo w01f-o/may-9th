@@ -1,0 +1,34 @@
+.heroes {
+  &__row {
+    padding-block: 24px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: var(--color-foreground);
+    color: var(--color-background);
+    margin-block-end: 24px;
+    padding: 32px;
+    border-radius: 26px;
+
+    &-img {
+      display: flex;
+      border-radius: 16px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-name {
+      font: {
+        size: 32px;
+      }
+    }
+  }
+}
