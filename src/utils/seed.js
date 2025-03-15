@@ -1,4 +1,4 @@
-import { readdir, stat } from 'fs/promises';
+import { readdir, readFile, stat } from 'fs/promises';
 import { join, resolve } from 'path';
 import { database } from '../index.js';
 
@@ -50,17 +50,24 @@ const seedMovies = async () => {
 		}
 
 		const files = await readdir(moviePath);
-		const thumbnail = files.find(file => file.startsWith('thumbnail'));
-		const video = files.find(file => file.startsWith('video'));
 
-		if (!thumbnail || !video) {
+		const descriptionFile = files.find(file => file.startsWith('description'));
+		const thumbnailFile = files.find(file => file.startsWith('thumbnail'));
+		const previewFile = files.find(file => file.startsWith('preview'));
+		const videoFile = files.find(file => file.startsWith('video'));
+
+		if (!descriptionFile || !thumbnailFile || !previewFile || !videoFile) {
 			throw new Error(`Файлы для фильма "${movieDir}" не найдены`);
 		}
 
+		const description = await readFile(join(moviePath, descriptionFile), 'utf-8');
+
 		return {
 			name: movieDir,
-			thumbnail: `/assets/movies/${movieDir}/${thumbnail}`,
-			video: `/assets/movies/${movieDir}/${video}`
+			description,
+			thumbnail: `/assets/movies/${movieDir}/${thumbnailFile}`,
+			preview: `/assets/movies/${movieDir}/${previewFile}`,
+			video: `/assets/movies/${movieDir}/${videoFile}`
 		};
 	}));
 

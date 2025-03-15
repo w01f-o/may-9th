@@ -5513,6 +5513,7 @@ button.swiper-pagination-bullet {
   overflow: hidden;
   border-radius: 16px;
   aspect-ratio: 16/9;
+  opacity: 0.7;
 }
 .movies-preview__item-img img {
   width: 100%;
@@ -5530,6 +5531,7 @@ button.swiper-pagination-bullet {
   bottom: 78px;
 }
 .movies-preview__item-name {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-size: 48px;
 }
 .movies-preview__buttons {

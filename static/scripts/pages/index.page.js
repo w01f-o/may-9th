@@ -37,7 +37,7 @@ const renderMoviesOnIndexPage = (movies) => {
 			<div class="swiper-slide">
 				<div class="movies-preview__item">
 					<div class="movies-preview__item-img">
-						<img src="${movie.thumbnail}" alt="${movie.name}" />
+						<img src="${movie.preview}" alt="${movie.name}" />
 					</div>
 					<div class="movies-preview__item-info">
 						<div class="movies-preview__item-name">${movie.name}</div>
@@ -55,6 +55,10 @@ const renderMoviesOnIndexPage = (movies) => {
 			prevEl: '.movies-preview__button_prev',
 		},
 		spaceBetween: 20,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
 	});
 };
 

@@ -18,6 +18,7 @@
       overflow: hidden;
       border-radius: 16px;
       aspect-ratio: 16 / 9;
+      opacity: 0.7;
 
       img {
         width: 100%;
@@ -38,6 +39,7 @@
     }
 
     &-name {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       font: {
         size: 48px;
       }

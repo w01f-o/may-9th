@@ -95,9 +95,11 @@ model QuizResult {
 model Movie {
   id Int @id @default(autoincrement())
 
-  name      String
-  thumbnail String
-  video     String
+  name        String
+  description String
+  thumbnail   String
+  preview     String
+  video       String
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")

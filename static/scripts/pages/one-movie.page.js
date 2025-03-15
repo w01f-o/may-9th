@@ -9,7 +9,7 @@ const renderOneMoviePage = (movie) => {
 		<div class="player">
 			<video class="player__video" src="${movie.video}" controls playsinline autoplay></video>
 		</div>
-		<p class="movies__page-text">${movie.name}</p>
+		<p class="movies__page-text">${movie.description}</p>
 	`;
 };
 

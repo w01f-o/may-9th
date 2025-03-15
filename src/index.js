@@ -12,6 +12,7 @@ import { moviesRouter } from './routers/movies.router.js';
 import { pagesRouter } from './routers/pages.router.js';
 import { promotionsRouter } from './routers/promotions.router.js';
 import { quizzesRouter } from './routers/quizzes.router.js';
+import { seed } from './utils/seed.js';
 
 const PORT = process.env.PORT;
 const API_PREFIX = '/api';
@@ -48,6 +49,6 @@ app.use(errorsMiddleware);
 
 
 app.listen(PORT, async () => {
-	// await seed();
+	await seed();
 	console.log(`Server is running on port http://localhost:${PORT}`);
 });
