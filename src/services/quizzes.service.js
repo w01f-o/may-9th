@@ -60,7 +60,11 @@ class QuizzesService {
 			return total;
 		}, 0);
 
-		return database.quizResult.create({ data: { userId, quizId, score, quizTotalScore: quiz.questions.length, name: quiz.name } });
+		return database.quizResult.upsert({
+			where: { userId_quizId: { userId, quizId } },
+			update: { score, quizTotalScore: quiz.questions.length, name: quiz.name },
+			create: { userId, quizId, score, quizTotalScore: quiz.questions.length, name: quiz.name }
+		});
 	}
 }
 

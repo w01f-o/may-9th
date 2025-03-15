@@ -5,13 +5,13 @@ const protectedPagesMiddleware = (req, res, next) => {
 	const authPages = ['/login', '/register'];
 
 
-	// if (!session.user && protectedPages.includes(path)) {
-	// 	return res.redirect('/login');
-	// }
+	if (!session.user && protectedPages.includes(path)) {
+		return res.redirect('/login');
+	}
 
-	// if (req.session.user && authPages.includes(path)) {
-	// 	return res.redirect('/profile');
-	// }
+	if (req.session.user && authPages.includes(path)) {
+		return res.redirect('/profile');
+	}
 
 	next();
 };

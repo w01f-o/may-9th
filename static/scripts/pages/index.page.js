@@ -8,8 +8,8 @@ const renderPromotionsOnIndexPage = (promotions) => {
 		.slice(0, 3)
 		.map((promotion) => `
 			<div class="col-lg-3 col-6">
-				<div class="promotions__item">
-					<div class="promotions__item-image">
+				<a class="promotions__item" href="/promotions/${promotion.id}">
+					<div class="promotions__item-img promotions__item-img_simplify">
 						<img src="${promotion.thumbnail}" alt="${promotion.title}" />
 					</div>
 					<div class="promotions__item-info">
@@ -17,7 +17,7 @@ const renderPromotionsOnIndexPage = (promotions) => {
 						<div class="promotions__item-title">${promotion.title}</div>
 						<div class="promotions__item-text">${promotion.text}</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		`).join('');
 
