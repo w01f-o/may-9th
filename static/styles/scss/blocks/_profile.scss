@@ -19,6 +19,7 @@
     }
 
     &-email {
+      margin-block-end: 32px;
       text-align: center;
       font: {
         size: 18px;
@@ -27,6 +28,44 @@
 
     &-avatar {
       max-width: 400px;
+    }
+  }
+
+  &__quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border: 1px solid var(--color-foreground);
+      padding: 24px;
+      border-radius: 16px;
+
+      &-name {
+        font: {
+          size: 24px;
+          weight: 500;
+        }
+      }
+    }
+
+    &-progress {
+      width: 100%;
+      height: 10px;
+      overflow: hidden;
+
+      margin-block-start: 5px;
+      border-radius: 5px;
+
+      background: var(--color-background);
+
+      &-bar {
+        height: 100%;
+        background: var(--color-red);
+      }
     }
   }
 }

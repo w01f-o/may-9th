@@ -3,7 +3,7 @@ import { database } from '../index.js';
 
 class QuizzesService {
 	static async findAll() {
-		return database.quiz.findMany({
+		const quiz = await database.quiz.findMany({
 			include: {
 				questions: {
 					include: {
@@ -12,6 +12,11 @@ class QuizzesService {
 				}
 			}
 		});
+
+		return quiz.map(q => ({
+			...q,
+			questions: q.questions.map(({ correctAnswerNumber, ...question }) => question)
+		}));
 	}
 
 	static async findById(id) {
@@ -33,6 +38,12 @@ class QuizzesService {
 		return quiz;
 	}
 
+	static async findUserResults(userId) {
+		return database.quizResult.findMany({
+			where: { userId },
+		});
+	}
+
 	static async submitAnswer(userId, quizId, userAnswers) {
 		const quiz = await this.findById(quizId);
 
@@ -49,7 +60,7 @@ class QuizzesService {
 			return total;
 		}, 0);
 
-		return database.quizResult.create({ data: { userId, quizId, score, quizTotalScore: quiz.questions.length } });
+		return database.quizResult.create({ data: { userId, quizId, score, quizTotalScore: quiz.questions.length, name: quiz.name } });
 	}
 }
 

@@ -83,6 +83,7 @@ model QuizResult {
   quizId Int
   quiz   Quiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
 
+  name           String
   score          Int
   quizTotalScore Int
 

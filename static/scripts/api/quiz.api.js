@@ -13,6 +13,12 @@ class QuizApi {
 		return data;
 	}
 
+	static async findUserResults() {
+		const { data } = await baseAxios.get(`/quizzes/results`);
+
+		return data;
+	}
+
 	static async submitAnswer(quizId, answers) {
 		const { data } = await baseAxios.post('/quizzes', { quizId, answers });
 

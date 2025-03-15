@@ -5287,11 +5287,41 @@ button.swiper-pagination-bullet {
   font-weight: 600;
 }
 .profile__card-email {
+  margin-block-end: 32px;
   text-align: center;
   font-size: 18px;
 }
 .profile__card-avatar {
   max-width: 400px;
+}
+.profile__quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.profile__quiz-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--color-foreground);
+  padding: 24px;
+  border-radius: 16px;
+}
+.profile__quiz-item-name {
+  font-size: 24px;
+  font-weight: 500;
+}
+.profile__quiz-progress {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  margin-block-start: 5px;
+  border-radius: 5px;
+  background: var(--color-background);
+}
+.profile__quiz-progress-bar {
+  height: 100%;
+  background: var(--color-red);
 }
 
 :root {

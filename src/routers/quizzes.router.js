@@ -6,6 +6,7 @@ const ENDPOINT = '/quizzes';
 const quizzesRouter = Router();
 
 quizzesRouter.get(ENDPOINT, QuizzesController.findAll);
+quizzesRouter.get(`${ENDPOINT}/results`, QuizzesController.findUserResults);
 quizzesRouter.get(`${ENDPOINT}/:id`, QuizzesController.findById);
 quizzesRouter.post(`${ENDPOINT}`, QuizzesController.submitAnswer);
 

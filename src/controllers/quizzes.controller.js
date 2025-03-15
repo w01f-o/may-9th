@@ -22,6 +22,16 @@ class QuizzesController {
 		}
 	}
 
+	static async findUserResults(req, res, next) {
+		try {
+			const data = await QuizzesService.findUserResults(req.session.user.id);
+
+			res.status(200).json(data);
+		} catch (error) {
+			next(error);
+		}
+	}
+
 	static async submitAnswer(req, res, next) {
 		try {
 			const { answers, quizId } = req.body;
