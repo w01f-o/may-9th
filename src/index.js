@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 import cors from 'cors';
 import 'dotenv/config';
 import express, { json } from 'express';
@@ -32,7 +33,15 @@ app.use(session({
 	cookie: {
 		secure: false,
 		maxAge: 24 * 60 * 60 * 1000
-	}
+	},
+	store: new PrismaSessionStore(
+		database,
+		{
+			checkPeriod: 24 * 60 * 60 * 1000,
+			dbRecordIdIsSessionId: true,
+			dbRecordIdFunction: undefined,
+		}
+	)
 }));
 
 app.use(protectedPagesMiddleware);
