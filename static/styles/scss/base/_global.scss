@@ -9,6 +9,10 @@
   background: var(--color-background);
   color: var(--color-foreground);
 
+  @media screen and (min-width: 960px) {
+    margin-left: calc(100vw - 100%);
+  }
+
   &::after {
     content: '';
     position: fixed;

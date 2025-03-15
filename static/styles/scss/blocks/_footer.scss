@@ -4,6 +4,7 @@
   }
 
   &__logo {
+    display: flex;
     img {
       object-fit: contain;
     }
