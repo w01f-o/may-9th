@@ -23,6 +23,9 @@ model User {
 
   quizResults QuizResult[]
 
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
   @@map("users")
 }
 
@@ -33,6 +36,9 @@ model Quiz {
 
   questions Question[]
   results   QuizResult[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("quizzes")
 }
@@ -48,6 +54,9 @@ model Question {
   answers            Answer[] @relation(name: "question_answers")
   correctAnswerIndex Int
 
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
   @@map("questions")
 }
 
@@ -58,6 +67,9 @@ model Answer {
 
   questionId Int
   question   Question @relation(name: "question_answers", fields: [questionId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("answers")
 }
@@ -74,6 +86,9 @@ model QuizResult {
   score          Int
   quizTotalScore Int
 
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
   @@map("quiz_results")
 }
 
@@ -84,5 +99,21 @@ model Movie {
   thumbnail String
   video     String
 
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
   @@map("movies")
+}
+
+model Promotion {
+  id Int @id @default(autoincrement())
+
+  thumbnail String
+  title     String
+  text      String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("promotions")
 }

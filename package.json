@@ -12,7 +12,7 @@
   "scripts": {
     "watch": "browser-sync start --proxy localhost:4000 --files static/**/* --no-notify",
     "dev": "nodemon src/index.js",
-    "db-init": "yarn prisma generate && yarn prisma migrate dev --name db",
+    "database": "yarn prisma generate && yarn prisma migrate dev --name db",
     "start": "node src/index.js"
   },
   "type": "module",

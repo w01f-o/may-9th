@@ -14,7 +14,14 @@ const authorize = async (type, credentials) => {
 	}
 };
 
-const logout = async () => { };
+const logout = async () => {
+	try {
+		await AuthApi.logout();
+		localStorage.removeItem('user');
+	} catch (e) {
+		throw e;
+	}
+};
 
 export { authorize, logout };
 

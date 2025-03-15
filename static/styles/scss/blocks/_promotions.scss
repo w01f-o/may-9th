@@ -1,0 +1,84 @@
+@use '../base/utils' as *;
+
+.promotions {
+  &__item {
+    display: block;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid var(--color-foreground);
+    margin-block-end: 24px;
+
+    &-img {
+      display: flex;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      padding: 24px 21px;
+    }
+
+    &-label {
+      margin-block-end: 6px;
+      font: {
+        size: 16px;
+      }
+    }
+
+    &-title {
+      font: {
+        size: 24px;
+        weight: 600;
+      }
+      margin-block-end: 12px;
+    }
+
+    &-text {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      font: {
+        size: 18px;
+        weight: 500;
+      }
+    }
+  }
+
+  &__page {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    &-title {
+      font: {
+        size: 48px;
+        weight: 700;
+      }
+    }
+
+    &-img {
+      display: flex;
+      overflow: hidden;
+      border-radius: 16px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-text {
+      padding-inline: 18px;
+      text-align: center;
+      line-height: 1.7;
+      font: {
+        size: 20px;
+      }
+    }
+  }
+}
