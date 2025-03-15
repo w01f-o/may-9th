@@ -7,7 +7,7 @@ const renderPromotionsOnIndexPage = (promotions) => {
 	promotionsContainerEl.innerHTML = promotions
 		.slice(0, 3)
 		.map((promotion) => `
-			<div class="col-lg-3 col-6">
+			<div class="col-lg-3 col-md-6 col-12">
 				<a class="promotions__item" href="/promotions/${promotion.id}">
 					<div class="promotions__item-img promotions__item-img_simplify">
 						<img src="${promotion.thumbnail}" alt="${promotion.title}" />
@@ -22,7 +22,7 @@ const renderPromotionsOnIndexPage = (promotions) => {
 		`).join('');
 
 	promotionsContainerEl.insertAdjacentHTML('beforeend', `
-		<div class="col-lg-3 col-6">
+		<div class="col-lg-3 col-md-6 col-12">
 			<a class="button_primary" href="/promotions">Открыть все</a>
 		</div>
 	`);
@@ -31,11 +31,14 @@ const renderPromotionsOnIndexPage = (promotions) => {
 const renderMoviesOnIndexPage = (movies) => {
 	const moviesSliderEl = document.querySelector('.movies-preview__swiper .swiper-wrapper');
 
+	const isMobile = window.matchMedia('(max-width: 992px)').matches;
+	const slideTag = isMobile ? 'a' : 'div';
+
 	moviesSliderEl.innerHTML = movies
 		.slice(0, 3)
 		.map((movie) => `
 			<div class="swiper-slide">
-				<div class="movies-preview__item">
+				<${slideTag} class="movies-preview__item" ${isMobile ? `href="/movies/${movie.id}"` : ''}>
 					<div class="movies-preview__item-img">
 						<img src="${movie.preview}" alt="${movie.name}" />
 					</div>
@@ -45,7 +48,7 @@ const renderMoviesOnIndexPage = (movies) => {
 					<a class="movies-preview__item-button button_primary" href="/movies/${movie.id}">
 						Смотреть
 					</a>
-				</div>
+				</${slideTag}>
 			</div>
 		`).join('');
 

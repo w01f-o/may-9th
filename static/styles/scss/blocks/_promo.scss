@@ -1,3 +1,5 @@
+@use '../base/utils' as *;
+
 .promo {
   height: calc(100svh - var(--header-height));
 
@@ -5,6 +7,10 @@
   &__row {
     height: 100%;
     padding-block-end: 80px;
+
+    @media (max-width: 420px) {
+      padding-block-end: 40px;
+    }
   }
 
   &__row {
@@ -19,6 +25,7 @@
   &__video {
     position: absolute;
     height: 100svh;
+    width: calc(100vw - calc(100vw - 100%));
     top: 0;
     left: 0;
     z-index: -1;
@@ -46,6 +53,24 @@
       left: -10%;
       top: 0;
       transform: translateX(-50%);
+
+      @include max-lg-screen {
+        transform: translateX(0) rotate(-45deg);
+        left: unset;
+        right: 0;
+        top: 50%;
+      }
+
+      @include max-md-screen {
+        width: 80%;
+        top: 60%;
+      }
+
+      @include max-sm-screen {
+        width: 70%;
+        right: 5%;
+        top: 75%;
+      }
     }
   }
 }

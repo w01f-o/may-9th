@@ -1,6 +1,12 @@
+@use '../base/utils' as *;
+
 .movies-preview {
   padding-block: 75px;
   position: relative;
+
+  @include max-lg-screen {
+    padding-block: 40px;
+  }
 
   background: var(--color-foreground);
   color: var(--color-background);
@@ -30,18 +36,43 @@
       position: absolute;
       left: 85px;
       bottom: 69px;
+
+      @include max-lg-screen {
+        left: 40px;
+        bottom: 20px;
+      }
+
+      @include max-lg-screen {
+        left: 30px;
+      }
     }
 
     &-button {
       position: absolute;
       right: 71px;
       bottom: 78px;
+
+      @include max-lg-screen {
+        display: none;
+      }
     }
 
     &-name {
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       font: {
         size: 48px;
+      }
+
+      @include max-lg-screen {
+        font: {
+          size: 36px;
+        }
+      }
+
+      @include max-md-screen {
+        font: {
+          size: 36px;
+        }
       }
     }
   }
@@ -54,6 +85,10 @@
     left: 0;
     padding-inline: 100px;
     transform: translateY(-50%);
+
+    @include max-xl-screen {
+      display: none;
+    }
   }
 
   &__button {
