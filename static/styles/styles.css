@@ -4240,7 +4240,7 @@ img {
 .body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100svh;
   font-family: var(--font-family);
   background: var(--color-background);
   color: var(--color-foreground);
@@ -4473,6 +4473,7 @@ img {
 .auth__form label {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 .auth__form button {
@@ -4597,4 +4598,37 @@ img {
 }
 .footer__nav-link:hover {
   opacity: 0.7;
+}
+
+.movies__item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-block-end: 24px;
+}
+.movies__item-image {
+  display: flex;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.movies__item-image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.movies__item-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+.movies__page-text {
+  padding-block-start: 18px;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.player__video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 6px;
 }/*# sourceMappingURL=styles.css.map */

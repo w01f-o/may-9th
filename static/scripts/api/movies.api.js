@@ -1,13 +1,13 @@
 import { baseAxios } from './axios.js';
 
 class MoviesApi {
-	static async getMovies() {
+	static async findAll() {
 		const { data } = await baseAxios.get('/movies');
 
 		return data;
 	}
 
-	static async getMovie(id) {
+	static async findOne(id) {
 		const { data } = await baseAxios.get(`/movies/${id}`);
 
 		return data;

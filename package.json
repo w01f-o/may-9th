@@ -10,7 +10,7 @@
     "prisma": "^6.5.0"
   },
   "scripts": {
-    "watch": "browser-sync start --proxy localhost:4000 --files static/**/* --no-notify",
+    "watch": "browser-sync start --proxy localhost:4444 --files static/**/* --no-notify",
     "dev": "nodemon src/index.js",
     "database": "yarn prisma generate && yarn prisma migrate dev --name db",
     "start": "node src/index.js"

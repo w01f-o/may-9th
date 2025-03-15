@@ -1,0 +1,36 @@
+.movies {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-block-end: 24px;
+
+    &-image {
+      display: flex;
+      overflow: hidden;
+      border-radius: 16px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-name {
+      font: {
+        size: 18px;
+        weight: 500;
+      }
+    }
+  }
+
+  &__page {
+    &-text {
+      padding-block-start: 18px;
+      line-height: 1.7;
+      font: {
+        size: 18px;
+      }
+    }
+  }
+}
