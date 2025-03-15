@@ -5562,4 +5562,36 @@ button.swiper-pagination-bullet {
 }
 .promotions-preview__row {
   align-items: center;
+}
+
+.quiz__answer {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--color-foreground);
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.quiz__answer_selected {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+.quiz__question {
+  padding-block: 32px;
+  font-size: 24px;
+}
+.quiz__current {
+  padding-block-start: 10%;
+  font-size: 32px;
+  font-weight: 600;
+}
+.quiz__next {
+  padding-block: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+.quiz__result {
+  padding-block-start: 10%;
+  font-size: 32px;
+  font-weight: 600;
 }/*# sourceMappingURL=styles.css.map */

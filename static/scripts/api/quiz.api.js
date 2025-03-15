@@ -1,20 +1,20 @@
 import { baseAxios } from './axios.js';
 
 class QuizApi {
-	static async getQuizzes() {
-		const { data } = await baseAxios.get('/api/quizzes');
+	static async findAll() {
+		const { data } = await baseAxios.get('/quizzes');
 
 		return data;
 	}
 
-	static async getQuiz(id) {
-		const { data } = await baseAxios.get(`/api/quizzes/${id}`);
+	static async findOne(id) {
+		const { data } = await baseAxios.get(`/quizzes/${id}`);
 
 		return data;
 	}
 
 	static async submitAnswer(quizId, answers) {
-		const { data } = await baseAxios.post('/api/quizzes/submit', { quizId, answers });
+		const { data } = await baseAxios.post('/quizzes', { quizId, answers });
 
 		return data;
 	}

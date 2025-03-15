@@ -17,7 +17,7 @@ const seedQuizzes = async () => {
 								{ text: 'Answer 3' }
 							],
 						},
-						correctAnswerIndex: 2
+						correctAnswerNumber: 2
 					},
 					{
 						text: 'Question 2',
@@ -28,8 +28,38 @@ const seedQuizzes = async () => {
 								{ text: 'Answer C' }
 							],
 						},
-						correctAnswerIndex: 1
-					}
+						correctAnswerNumber: 1
+					}, {
+						text: 'Question 3',
+						answers: {
+							create: [
+								{ text: 'Answer A' },
+								{ text: 'Answer B' },
+								{ text: 'Answer C' }
+							],
+						},
+						correctAnswerNumber: 1
+					}, {
+						text: 'Question 4',
+						answers: {
+							create: [
+								{ text: 'Answer A' },
+								{ text: 'Answer B' },
+								{ text: 'Answer C' }
+							],
+						},
+						correctAnswerNumber: 1
+					}, {
+						text: 'Question 5',
+						answers: {
+							create: [
+								{ text: 'Answer A' },
+								{ text: 'Answer B' },
+								{ text: 'Answer C' }
+							],
+						},
+						correctAnswerNumber: 1
+					},
 				]
 			}
 		},

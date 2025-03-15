@@ -1,0 +1,49 @@
+.quiz {
+  &__answer {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--color-foreground);
+
+    font: {
+      size: 18px;
+      weight: 600;
+    }
+
+    transition: 0.3s;
+
+    &_selected {
+      background: var(--color-foreground);
+      color: var(--color-background);
+    }
+  }
+
+  &__question {
+    padding-block: 32px;
+    font: {
+      size: 24px;
+    }
+  }
+
+  &__current {
+    padding-block-start: 10%;
+    font: {
+      size: 32px;
+      weight: 600;
+    }
+  }
+
+  &__next {
+    padding-block: 24px;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__result {
+    padding-block-start: 10%;
+    font: {
+      size: 32px;
+      weight: 600;
+    }
+  }
+}

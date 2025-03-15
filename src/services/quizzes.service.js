@@ -39,12 +39,13 @@ class QuizzesService {
 		const score = userAnswers.reduce((total, { answerId, questionId }) => {
 			const question = quiz.questions.find(q => q.id === questionId);
 			if (question) {
-				const correctAnswer = question.answers[question.correctAnswerIndex - 1];
+				const correctAnswer = question.answers[question.correctAnswerNumber - 1];
 
 				if (correctAnswer.id === answerId) {
 					total += 1;
 				}
 			}
+
 			return total;
 		}, 0);
 

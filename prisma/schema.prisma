@@ -51,8 +51,8 @@ model Question {
   quizId Int
   quiz   Quiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
 
-  answers            Answer[] @relation(name: "question_answers")
-  correctAnswerIndex Int
+  answers             Answer[] @relation(name: "question_answers")
+  correctAnswerNumber Int
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
