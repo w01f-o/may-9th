@@ -5603,13 +5603,17 @@ button.swiper-pagination-bullet {
 .heroes__page-img {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 70%;
   border-radius: 26px;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .heroes__page-img {
+    width: 100%;
+  }
+}
 .heroes__page-img img {
   width: 100%;
-  height: 568px;
   -o-object-fit: cover;
      object-fit: cover;
 }
