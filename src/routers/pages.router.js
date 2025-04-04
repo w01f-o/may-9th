@@ -30,6 +30,14 @@ pagesRouter.get('/movies/:id', (_, res, next) => {
 	sendFileOrNext(_, res, next, join(pagesDirectory, 'movie.html'));
 });
 
+pagesRouter.get('/hero_cities', (_, res, next) => {
+	sendFileOrNext(_, res, next, join(pagesDirectory, 'hero-cities.html'));
+});
+
+pagesRouter.get('/hero_cities/:id', (_, res, next) => {
+	sendFileOrNext(_, res, next, join(pagesDirectory, 'hero-city.html'));
+});
+
 pagesRouter.get('/:page', (req, res, next) => {
 	sendFileOrNext(req, res, next, join(pagesDirectory, `${req.params.page}.html`));
 });;

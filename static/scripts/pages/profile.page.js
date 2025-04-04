@@ -18,6 +18,9 @@ const renderProfilePage = (user, quizResults) => {
 		<div class="profile__quiz">
 		${quizResults.map((quizResult) => {
 		const progressPercent = (quizResult.score / quizResult.quizTotalScore) * 100;
+		const details = JSON.parse(quizResult.details);
+		console.log(details);
+
 
 		return `
 			<a class="profile__quiz-item" href="/quiz">
@@ -27,6 +30,16 @@ const renderProfilePage = (user, quizResults) => {
 				</div>
 				<div class="profile__quiz-progress">
 					<div class="profile__quiz-progress-bar" style="width: ${progressPercent}%;"></div>
+				</div>
+				<div class="profile__quiz-details">
+					${details.map((detail) => `
+							<div class="profile__quiz-details-item">
+								<div class="profile__quiz-details-question">${detail.questionText}</div>
+								<div class="profile__quiz-details-answer">Правильный ответ: ${detail.correctAnswerText}</div>
+								<div class="profile__quiz-details-answer">Ваш ответ: ${detail.userAnswerText}</div>
+								<div class="profile__quiz-details-correctness ${detail.isCorrect ? 'profile__quiz-details-correctness_correct' : 'profile__quiz-details-correctness_incorrect'}">${detail.isCorrect ? 'Правильно' : 'Неправильно'}</div>
+							</div>
+						`).join('')}
 				</div>
 			</a>
 		`;

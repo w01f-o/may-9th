@@ -11,15 +11,25 @@
   }
 
   .nav {
+    display: flex;
+    justify-content: flex-end;
+
     @include max-md-screen {
       display: none;
     }
 
     &__list {
-      display: flex;
+      display: inline-flex;
       justify-content: flex-end;
       align-items: center;
+      padding: 12px 16px;
+      border-radius: 8px;
       gap: 16px;
+
+      &_inverted {
+        background: var(--color-background);
+        color: var(--color-foreground);
+      }
     }
 
     .button_primary {

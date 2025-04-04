@@ -4,7 +4,6 @@ const protectedPagesMiddleware = (req, res, next) => {
 	const protectedPages = ['/profile', '/quiz'];
 	const authPages = ['/login', '/register'];
 
-
 	if (!session.user && protectedPages.includes(path)) {
 		return res.redirect('/login');
 	}

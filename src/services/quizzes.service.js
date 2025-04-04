@@ -47,23 +47,49 @@ class QuizzesService {
 	static async submitAnswer(userId, quizId, userAnswers) {
 		const quiz = await this.findById(quizId);
 
-		const score = userAnswers.reduce((total, { answerId, questionId }) => {
+		let score = 0;
+		const questionResults = [];
+
+		userAnswers.forEach(({ answerId, questionId }) => {
 			const question = quiz.questions.find(q => q.id === questionId);
+
 			if (question) {
 				const correctAnswer = question.answers[question.correctAnswerNumber - 1];
+				const userAnswer = question.answers.find(a => a.id === answerId);
+				const isCorrect = correctAnswer.id === answerId;
 
-				if (correctAnswer.id === answerId) {
-					total += 1;
+				if (isCorrect) {
+					score += 1;
 				}
-			}
 
-			return total;
-		}, 0);
+				questionResults.push({
+					questionId,
+					questionText: question.text,
+					userAnswerId: answerId,
+					userAnswerText: userAnswer ? userAnswer.text : null,
+					correctAnswerId: correctAnswer.id,
+					correctAnswerText: correctAnswer.text,
+					isCorrect
+				});
+			}
+		});
 
 		return database.quizResult.upsert({
 			where: { userId_quizId: { userId, quizId } },
-			update: { score, quizTotalScore: quiz.questions.length, name: quiz.name },
-			create: { userId, quizId, score, quizTotalScore: quiz.questions.length, name: quiz.name }
+			update: {
+				score,
+				quizTotalScore: quiz.questions.length,
+				name: quiz.name,
+				details: JSON.stringify(questionResults)
+			},
+			create: {
+				userId,
+				quizId,
+				score,
+				quizTotalScore: quiz.questions.length,
+				name: quiz.name,
+				details: JSON.stringify(questionResults)
+			}
 		});
 	}
 }

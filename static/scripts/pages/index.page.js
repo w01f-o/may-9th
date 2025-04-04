@@ -1,3 +1,4 @@
+import { HeroCitiesApi } from '../api/hero-cities.api.js';
 import { MoviesApi } from '../api/movies.api.js';
 import { PromotionsApi } from '../api/promotions.api.js';
 
@@ -65,14 +66,41 @@ const renderMoviesOnIndexPage = (movies) => {
 	});
 };
 
+const renderHeroCitiesOnIndexPage = (heroCities) => {
+	const heroCitiesContainerEl = document.querySelector('.heroes__row');
+
+	heroCitiesContainerEl.innerHTML = heroCities
+		.slice(0, 6)
+		.map((heroCity) => `
+            <div class="col-lg-4 col-md-6 col-12">
+              <a class="heroes__item" href="/hero_cities/${heroCity.id}">
+                <div class="heroes__item-img">
+                  <img src="${heroCity.image}" alt="${heroCity.name}" />
+                </div>
+                <div class="heroes__item-name">${heroCity.name}</div>
+              </a>
+            </div>
+		`).join('');
+
+	heroCitiesContainerEl.insertAdjacentHTML('beforeend', `
+		<div class="col-12">
+			<div class="heroes__view-all">
+				<a class="button_primary" href="/hero_cities">Открыть все</a>
+			</div>
+		</div>
+	`);
+};
+
 const initIndexPage = async () => {
-	const [promotions, movies] = await Promise.all([
+	const [promotions, movies, heroCities] = await Promise.all([
 		PromotionsApi.findAll(),
 		MoviesApi.findAll(),
+		HeroCitiesApi.findAll(),
 	]);
 
 	renderPromotionsOnIndexPage(promotions);
 	renderMoviesOnIndexPage(Array.from({ length: 50 }).fill(movies[0]));
+	renderHeroCitiesOnIndexPage(heroCities);
 };
 
 initIndexPage();;

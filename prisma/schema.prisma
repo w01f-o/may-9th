@@ -86,6 +86,7 @@ model QuizResult {
   name           String
   score          Int
   quizTotalScore Int
+  details        Json
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -127,4 +128,17 @@ model Session {
   sid       String   @unique
   data      String
   expiresAt DateTime
+}
+
+model HeroCity {
+  id Int @id @default(autoincrement())
+
+  name        String
+  image       String
+  description String
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("hero_cities")
 }
