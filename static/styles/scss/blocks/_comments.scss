@@ -1,0 +1,59 @@
+.comments {
+  &__title {
+    padding-block: 24px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--color-foreground);
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    &-author {
+      margin-block-end: 12px;
+      font: {
+        size: 18px;
+        weight: 600;
+      }
+    }
+
+    &-text {
+      margin-block-end: 8px;
+      font: {
+        size: 14px;
+        weight: 500;
+      }
+    }
+
+    &-date {
+      font: {
+        size: 12px;
+        weight: 400;
+      }
+    }
+  }
+
+  &__form {
+    margin-block-end: 24px;
+    &-textarea {
+      width: 100%;
+      resize: vertical;
+      min-height: 120px;
+      margin-block-end: 12px;
+    }
+  }
+}

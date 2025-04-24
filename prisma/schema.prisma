@@ -22,6 +22,7 @@ model User {
   gender   Gender
 
   quizResults QuizResult[]
+  comments    Comment[]
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
@@ -104,10 +105,28 @@ model Movie {
   preview     String
   video       String
 
+  comments Comment[]
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("movies")
+}
+
+model Comment {
+  id Int @id @default(autoincrement())
+
+  text String
+
+  userId  Int
+  user    User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movieId Int
+  movie   Movie @relation(fields: [movieId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("comments")
 }
 
 model Promotion {

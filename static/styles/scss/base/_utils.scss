@@ -24,12 +24,6 @@
   }
 }
 
-@mixin max-xl-screen {
-  @media (max-width: $breakpoint-xxl) {
-    @content;
-  }
-}
-
 @mixin hover-screen {
   @media (hover: hover) {
     @content;
