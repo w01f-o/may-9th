@@ -42,6 +42,6 @@ pagesRouter.get('/:page', (req, res, next) => {
 	sendFileOrNext(req, res, next, join(pagesDirectory, `${req.params.page}.html`));
 });;
 
-pagesRouter.get('/*', (_, res) => {
-	res.status(404).sendFile(join(pagesDirectory, '404.html'));
+pagesRouter.get('/*', (req, res, next) => {
+	sendFileOrNext(req, res, next, join(pagesDirectory, '404.html'));
 });

@@ -1,3 +1,5 @@
+@use '../base/utils' as *;
+
 .footer {
   &__row {
     padding-block: 60px;
@@ -32,6 +34,35 @@
       &:hover {
         opacity: 0.7;
       }
+    }
+  }
+
+  &__support {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &-title {
+      @include max-lg-screen {
+        padding-block-start: 16px;
+      }
+
+      font: {
+        size: 24px;
+        weight: 600;
+      }
+    }
+
+    &-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
   }
 }

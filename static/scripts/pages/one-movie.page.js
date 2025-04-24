@@ -8,7 +8,7 @@ const renderOneMoviePage = (movie) => {
 	movieTitleEl.textContent = movie.name;
 	movieContainerEl.innerHTML = `
 		<div class="player">
-			<video class="player__video" src="${movie.video}" controls playsinline></video>
+			<video class="player__video" src="${movie.video}" controls playsinline autoplay></video>
 		</div>
 		<p class="movies__page-text">${movie.description}</p>
 	`;

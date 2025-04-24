@@ -5460,6 +5460,30 @@ button.swiper-pagination-bullet {
 .footer__nav-link:hover {
   opacity: 0.7;
 }
+.footer__support {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__support-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.footer__support-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+@media (max-width: 992px) {
+  .footer__support-title {
+    padding-block-start: 16px;
+  }
+}
+.footer__support-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
 .movies__item {
   display: flex;
