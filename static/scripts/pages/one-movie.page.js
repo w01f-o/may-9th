@@ -26,9 +26,9 @@ const renderMovieComments = (comments) => {
 					<div class="comments__item-text">${comment.text}</div>
 					<div class="comments__item-date">Создано: ${new Date(comment.createdAt).toLocaleDateString()}</div>
 				</div>
-				${user.id === comment.userId && `
+				${user.id === comment.userId ? `
 					<button data-id="${comment.id}" class="button_primary comments__item-delete" data-id="${comment.id}">Удалить</button>
-					`}
+					` : ''}
 			</div>
 		</div>
 	`).join('');

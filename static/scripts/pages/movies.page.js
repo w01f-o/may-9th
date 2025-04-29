@@ -18,7 +18,7 @@ const renderMoviesPage = (movies) => {
 const initMoviesPage = async () => {
 	const movies = await MoviesApi.findAll();
 
-	renderMoviesPage(Array.from({ length: 50 }).fill(movies[0]));
+	renderMoviesPage(movies);
 };
 
 initMoviesPage();
